@@ -1,4 +1,3 @@
-// src/services/animalService.ts
 import api from './api';
 
 interface Animal {

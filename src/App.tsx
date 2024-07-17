@@ -1,4 +1,3 @@
-// src/App.tsx
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import AnimalDetails from './pages/AnimalDetails';
 import AnimalList from './pages/AnimalList';
@@ -10,9 +9,10 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registrar-user" element={<RegistrarUser />} />
-        <Route path=" " element={<RegistrarAnimal />} />
+        <Route path="/regitrar-animal " element={<RegistrarAnimal />} />
         <Route path="/animais" element={<AnimalList />} />
         <Route path="/animal/:id" element={<AnimalDetails />} />
       </Routes>

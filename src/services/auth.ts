@@ -1,4 +1,3 @@
-// src/services/auth.ts
 import Keycloak from 'keycloak-js';
 
 const keycloak = new Keycloak({
