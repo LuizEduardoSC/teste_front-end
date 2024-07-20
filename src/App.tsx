@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import AnimalDetails from './pages/AnimalDetails';
-import AnimalList from './pages/AnimalList';
+import DetalhesAnimal from './pages/DetalhesAnimal';
+import ListaAnimal from './pages/ListaAnimal';
 import Login from './pages/Login';
 import RegistrarAnimal from './pages/RegistrarAnimal';
 import RegistrarUser from './pages/RegistrarUser';
@@ -12,9 +12,9 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registrar-user" element={<RegistrarUser />} />
-        <Route path="/regitrar-animal " element={<RegistrarAnimal />} />
-        <Route path="/animais" element={<AnimalList />} />
-        <Route path="/animal/:id" element={<AnimalDetails />} />
+        <Route path="/regitrar-animal" element={<RegistrarAnimal />} />
+        <Route path="/animais" element={<ListaAnimal />} />
+        <Route path="/animal/:id" element={<DetalhesAnimal />} />
       </Routes>
     </Router>
   );
