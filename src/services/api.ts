@@ -1,12 +1,11 @@
 import axios from 'axios';
-import keycloak from './auth';
 
 const api = axios.create({
-    baseURL: 'https://pethub-hml.cgtecnologia.com.br/api',
+    baseURL: 'https://pethub-hml.cgtecnologia.com.br/api/v1',
 });
 
 api.interceptors.request.use(config => {
-    const token = keycloak.token;
+    const token = localStorage.getItem('token');
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }

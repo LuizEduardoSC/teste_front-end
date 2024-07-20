@@ -1,9 +1,25 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const ListAnimals = () => {
-    const [animals, setAnimals] = useState([]);
+interface Animal {
+    id?: number;
+    nome: string;
+    nomeCientifico: string;
+    nomeEspecie: string;
+    cor: string;
+    codigoChip: string;
+    codigoTatuagem: string;
+    dataNascimento: number;
+    tamanhoPorte: string;
+    peso: number;
+    temperamento: string;
+    raca: string;
+    foto: string;
+}
+
+const ListAnimals: React.FC = () => {
+    const [animals, setAnimals] = useState<Animal[]>([]);
 
     useEffect(() => {
         const fetchAnimals = async () => {
@@ -16,7 +32,7 @@ const ListAnimals = () => {
                 });
                 setAnimals(response.data);
             } catch (error) {
-                console.error('Error fetching animals', error);
+                console.error('Erro ao buscar animais', error);
             }
         };
         fetchAnimals();
@@ -41,3 +57,4 @@ const ListAnimals = () => {
 };
 
 export default ListAnimals;
+

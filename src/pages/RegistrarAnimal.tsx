@@ -6,11 +6,14 @@ const RegisterAnimal = () => {
     const [nomeCientifico, setNomeCientifico] = useState('');
     const [nomeEspecie, setNomeEspecie] = useState('');
     const [cor, setCor] = useState('');
+    const [codigoChip, setCodigoChip] = useState('');
+    const [codigoTatuagem, setCodigoTatuagem] = useState('');
     const [dataNascimento, setDataNascimento] = useState('');
     const [tamanhoPorte, setTamanhoPorte] = useState('');
     const [peso, setPeso] = useState('');
     const [temperamento, setTemperamento] = useState('');
     const [raca, setRaca] = useState('');
+    const [foto, setFoto] = useState('');
 
     const handleRegister = async () => {
         try {
@@ -22,11 +25,14 @@ const RegisterAnimal = () => {
                     nomeCientifico: nomeCientifico,
                     nomeEspecie: nomeEspecie,
                     cor: cor,
+                    codigoChip: codigoChip,
+                    codigoTatuagem: codigoTatuagem,
                     dataNascimento: dataNascimento,
                     tamanhoPorte: tamanhoPorte,
                     peso: parseFloat(peso),
                     temperamento: temperamento,
                     raca: raca,
+                    foto: foto,
                 },
                 {
                     headers: {
@@ -73,6 +79,20 @@ const RegisterAnimal = () => {
                     className="mb-4 p-2 border border-gray-300 rounded"
                 />
                 <input
+                    type="text"
+                    placeholder="codigoChip"
+                    value={codigoChip}
+                    onChange={(e) => setCodigoChip(e.target.value)}
+                    className="mb-4 p-2 border border-gray-300 rounded"
+                />
+                <input
+                    type="text"
+                    placeholder="codigoTatuagem"
+                    value={codigoChip}
+                    onChange={(e) => setCodigoTatuagem(e.target.value)}
+                    className="mb-4 p-2 border border-gray-300 rounded"
+                />
+                <input
                     type="date"
                     placeholder="Data de Nascimento"
                     value={dataNascimento}
@@ -105,6 +125,13 @@ const RegisterAnimal = () => {
                     placeholder="Raça"
                     value={raca}
                     onChange={(e) => setRaca(e.target.value)}
+                    className="mb-4 p-2 border border-gray-300 rounded"
+                />
+                <input
+                    type="text"
+                    placeholder="Foto"
+                    value={foto}
+                    onChange={(e) => setFoto(e.target.value)}
                     className="mb-4 p-2 border border-gray-300 rounded"
                 />
                 <button onClick={handleRegister} className="w-full p-2 bg-blue-500 text-white rounded">
